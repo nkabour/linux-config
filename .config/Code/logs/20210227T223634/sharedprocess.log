@@ -1,7 +1,0 @@
-[2021-02-27 22:36:39.775] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter
-[2021-02-27 22:36:44.700] [sharedprocess] [info] Downloaded extension: ms-toolsai.jupyter undefined
-[2021-02-27 22:36:45.536] [sharedprocess] [info] Extracted extension to /home/tsubase/.vscode/extensions/.ms-toolsai.jupyter-2021.2.603412351: ms-toolsai.jupyter
-[2021-02-27 22:36:45.536] [sharedprocess] [info] Renamed to /home/tsubase/.vscode/extensions/ms-toolsai.jupyter-2021.2.603412351
-[2021-02-27 22:36:45.538] [sharedprocess] [info] Installation completed. ms-toolsai.jupyter
-[2021-02-27 22:36:45.550] [sharedprocess] [info] Extensions installed successfully: ms-toolsai.jupyter
-[2021-02-27 22:37:17.560] [sharedprocess] [info] Starting to clean up unused language packs.

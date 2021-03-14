@@ -1,2 +1,0 @@
-[2021-02-17 11:43:21.347] [renderer1] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/tsubase/pythonProjects/.vscode'
-[2021-02-17 11:43:33.254] [renderer1] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/tsubase/vsProjects/webflow_library/.vscode'
