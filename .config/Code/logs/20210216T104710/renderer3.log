@@ -1,0 +1,11 @@
+[2021-02-16 12:12:00.247] [renderer3] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/tsubase/pythonProjects/.vscode'
+[2021-02-16 18:44:25.238] [renderer3] [error] getaddrinfo EAI_AGAIN default.exp-tas.com: Error: getaddrinfo EAI_AGAIN default.exp-tas.com
+	at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[2021-02-16 18:44:30.226] [renderer3] [error] getaddrinfo EAI_AGAIN default.exp-tas.com: Error: getaddrinfo EAI_AGAIN default.exp-tas.com
+	at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[2021-02-16 19:14:09.374] [renderer3] [error] getaddrinfo EAI_AGAIN default.exp-tas.com: Error: getaddrinfo EAI_AGAIN default.exp-tas.com
+	at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[2021-02-16 19:44:09.374] [renderer3] [error] getaddrinfo EAI_AGAIN default.exp-tas.com: Error: getaddrinfo EAI_AGAIN default.exp-tas.com
+	at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[2021-02-16 20:14:09.375] [renderer3] [error] getaddrinfo EAI_AGAIN default.exp-tas.com: Error: getaddrinfo EAI_AGAIN default.exp-tas.com
+	at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)

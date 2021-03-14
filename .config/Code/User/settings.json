@@ -1,0 +1,8 @@
+{
+    "python.linting.pylintArgs": ["--generate-members"],
+ "jupyter.experiments.optOutFrom": ["NativeNotebookEditor"],
+ "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "[javascript]": {
+   "editor.defaultFormatter": "esbenp.prettier-vscode"
+ }
+}

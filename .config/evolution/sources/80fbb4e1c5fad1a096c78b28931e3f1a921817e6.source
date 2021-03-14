@@ -1,0 +1,29 @@
+[Data Source]
+DisplayName=nadak.k1996@gmail.com
+Enabled=true
+Parent=1f4a5694c57743871cbc50c4c5bf869f399b8ab4
+
+[Mail Submission]
+SentFolder=folder://local/Sent
+TransportUid=1ff6a920201d14c68d5d114557159dc00d03fe0c
+RepliesToOriginFolder=false
+UseSentFolder=true
+
+[Mail Composition]
+Bcc=
+Cc=
+DraftsFolder=folder://local/Drafts
+ReplyStyle=default
+SignImip=true
+TemplatesFolder=
+StartBottom=inconsistent
+TopSignature=inconsistent
+Language=
+
+[Mail Identity]
+Address=nadak.k1996@gmail.com
+Aliases=
+Name=
+Organization=
+ReplyTo=
+SignatureUid=none

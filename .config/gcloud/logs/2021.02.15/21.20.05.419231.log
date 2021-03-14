@@ -1,0 +1,29 @@
+2021-02-15 21:20:05,419 DEBUG    root            Running [gcloud] with arguments: [-v: "None"]
+2021-02-15 21:20:05,420 DEBUG    root            Loaded Command Group: ['gcloud', 'version']
+2021-02-15 21:20:05,422 DEBUG    root            Running [gcloud.version] with arguments: []
+2021-02-15 21:20:05,424 INFO     root            Display format: "flattened[no-pad,separator=" "]"
+2021-02-15 21:20:05,466 INFO     ___FILE_ONLY___ Google Cloud SDK
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ 327.0.0
+
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ alpha
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ 2021.02.05
+
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ beta
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ 2021.02.05
+
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ bq
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,467 INFO     ___FILE_ONLY___ 2.0.64
+
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___ core
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___ 2021.02.05
+
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___ gsutil
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___  
+2021-02-15 21:20:05,468 INFO     ___FILE_ONLY___ 4.58
+
+2021-02-15 21:20:05,468 DEBUG    root            SDK update checks are disabled.

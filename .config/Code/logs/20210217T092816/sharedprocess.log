@@ -1,0 +1,11 @@
+[2021-02-17 09:28:31.244] [sharedprocess] [info] Deleted from disk dart-code.flutter /home/tsubase/.vscode/extensions/dart-code.flutter-3.17.0
+[2021-02-17 09:28:31.246] [sharedprocess] [info] Deleted from disk dart-code.dart-code /home/tsubase/.vscode/extensions/dart-code.dart-code-3.17.1
+[2021-02-17 09:28:31.342] [sharedprocess] [info] Deleted from disk ms-azuretools.vscode-docker /home/tsubase/.vscode/extensions/ms-azuretools.vscode-docker-1.8.1
+[2021-02-17 09:28:31.351] [sharedprocess] [info] Deleted from disk ms-python.python /home/tsubase/.vscode/extensions/ms-python.python-2020.11.371526539
+[2021-02-17 09:28:43.405] [sharedprocess] [info] Installing extension: ms-azuretools.vscode-docker
+[2021-02-17 09:28:49.118] [sharedprocess] [info] Downloaded extension: ms-azuretools.vscode-docker undefined
+[2021-02-17 09:28:49.313] [sharedprocess] [info] Extracted extension to /home/tsubase/.vscode/extensions/.ms-azuretools.vscode-docker-1.10.0: ms-azuretools.vscode-docker
+[2021-02-17 09:28:49.313] [sharedprocess] [info] Renamed to /home/tsubase/.vscode/extensions/ms-azuretools.vscode-docker-1.10.0
+[2021-02-17 09:28:49.318] [sharedprocess] [info] Installation completed. ms-azuretools.vscode-docker
+[2021-02-17 09:28:49.378] [sharedprocess] [info] Extensions installed successfully: ms-azuretools.vscode-docker
+[2021-02-17 09:29:10.218] [sharedprocess] [info] Starting to clean up unused language packs.

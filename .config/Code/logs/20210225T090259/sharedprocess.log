@@ -1,0 +1,15 @@
+[2021-02-25 09:03:11.021] [sharedprocess] [info] Deleted from disk ms-toolsai.jupyter /home/tsubase/.vscode/extensions/ms-toolsai.jupyter-2020.12.414227025
+[2021-02-25 09:03:11.026] [sharedprocess] [info] Deleted from disk ms-python.python /home/tsubase/.vscode/extensions/ms-python.python-2021.1.502429796
+[2021-02-25 09:03:17.010] [sharedprocess] [info] Installing extension: ms-python.python
+[2021-02-25 09:03:50.120] [sharedprocess] [info] Starting to clean up unused language packs.
+[2021-02-25 09:04:27.136] [sharedprocess] [info] Downloaded extension: ms-python.python undefined
+[2021-02-25 09:04:28.701] [sharedprocess] [info] Extracted extension to /home/tsubase/.vscode/extensions/.ms-python.python-2021.2.582707922: ms-python.python
+[2021-02-25 09:04:28.702] [sharedprocess] [info] Renamed to /home/tsubase/.vscode/extensions/ms-python.python-2021.2.582707922
+[2021-02-25 09:04:28.704] [sharedprocess] [info] Installation completed. ms-python.python
+[2021-02-25 09:04:28.759] [sharedprocess] [info] Extensions installed successfully: ms-python.python
+[2021-02-25 14:54:12.067] [sharedprocess] [info] Installing extension: esbenp.prettier-vscode
+[2021-02-25 14:54:15.690] [sharedprocess] [info] Downloaded extension: esbenp.prettier-vscode undefined
+[2021-02-25 14:54:15.975] [sharedprocess] [info] Extracted extension to /home/tsubase/.vscode/extensions/.esbenp.prettier-vscode-5.9.2: esbenp.prettier-vscode
+[2021-02-25 14:54:15.976] [sharedprocess] [info] Renamed to /home/tsubase/.vscode/extensions/esbenp.prettier-vscode-5.9.2
+[2021-02-25 14:54:15.977] [sharedprocess] [info] Installation completed. esbenp.prettier-vscode
+[2021-02-25 14:54:15.985] [sharedprocess] [info] Extensions installed successfully: esbenp.prettier-vscode

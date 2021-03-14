@@ -1,0 +1,20 @@
+[Data Source]
+DisplayName=meno.cheen1996@gmail.com
+Enabled=true
+Parent=846ea42dc19cea10854b2080250cd20e59bd121f
+
+[Authentication]
+Host=smtp.gmail.com
+Method=XOAUTH2
+Port=465
+ProxyUid=system-proxy
+RememberPassword=true
+User=meno.cheen1996@gmail.com
+CredentialName=
+IsExternal=false
+
+[Security]
+Method=ssl-on-alternate-port
+
+[Mail Transport]
+BackendName=smtp

@@ -1,0 +1,101 @@
+["INFO" - 2:54:16 PM] Extension Name: esbenp.prettier-vscode.
+["INFO" - 2:54:16 PM] Extension Version: 5.9.2.
+["INFO" - 2:54:16 PM] Enabling prettier for languages: ansible, css, graphql, home-assistant, html, javascript, javascriptreact, json, json5, jsonc, less, markdown, mdx, mongo, postcss, scss, typescript, typescriptreact, vue, yaml
+["INFO" - 2:54:16 PM] Enabling prettier for file extensions: .JSON-tmLanguage, ._js, .avsc, .bones, .cjs, .component.html, .css, .es, .es6, .frag, .geojson, .gltf, .gql, .graphql, .graphqls, .gs, .har, .htm, .html, .html.hl, .ice, .inc, .jake, .js, .js.flow, .jsb, .jscad, .jsfl, .jsm, .json, .json5, .jsonc, .jss, .jsx, .less, .markdown, .mcmeta, .md, .mdown, .mdwn, .mdx, .mir, .mjml, .mjs, .mkd, .mkdn, .mkdown, .njs, .pac, .pcss, .postcss, .reek, .ronn, .rviz, .scss, .sjs, .ssjs, .st, .sublime-build, .sublime-commands, .sublime-completions, .sublime-keymap, .sublime-macro, .sublime-menu, .sublime-mousemap, .sublime-project, .sublime-settings, .sublime-syntax, .sublime-theme, .sublime-workspace, .sublime_metrics, .sublime_session, .syntax, .tfstate, .tfstate.backup, .topojson, .ts, .tsx, .vue, .webapp, .webmanifest, .workbook, .wxs, .wxss, .xht, .xhtml, .xsjs, .xsjslib, .yaml, .yaml-tmlanguage, .yaml.sed, .yml, .yml.mysql, .yy, .yyp
+["INFO" - 2:54:16 PM] Enabling prettier for range supported languages: graphql, javascript, javascriptreact, json, typescript, typescriptreact
+["INFO" - 2:56:43 PM] Formatting /home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js
+["INFO" - 2:56:43 PM] Using ignore file (if present) at /home/tsubase/vsProjects/webflow_library/.prettierignore
+["INFO" - 2:56:43 PM] Using bundled version of prettier.
+["INFO" - 2:56:43 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 2:56:43 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 2:56:43 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js",
+  "parser": "babel"
+}
+["INFO" - 2:56:43 PM] Formatting completed in 147.372652ms.
+["INFO" - 6:44:14 PM] Formatting /home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js
+["INFO" - 6:44:14 PM] Using ignore file (if present) at /home/tsubase/vsProjects/webflow_library/.prettierignore
+["INFO" - 6:44:14 PM] Using bundled version of prettier.
+["INFO" - 6:44:14 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 6:44:14 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:44:14 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js",
+  "parser": "babel"
+}
+["INFO" - 6:44:14 PM] Formatting completed in 118.53085ms.
+["INFO" - 6:46:41 PM] Formatting /home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js
+["INFO" - 6:46:41 PM] Using ignore file (if present) at /home/tsubase/vsProjects/webflow_library/.prettierignore
+["INFO" - 6:46:41 PM] Using bundled version of prettier.
+["INFO" - 6:46:41 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "babel"
+}
+["INFO" - 6:46:41 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:46:41 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/tsubase/vsProjects/webflow_library/dev/pages/challenges/team_profile/navigation.js",
+  "parser": "babel"
+}
+["INFO" - 6:46:41 PM] Formatting completed in 67.469432ms.

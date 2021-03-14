@@ -1,0 +1,1 @@
+[2021-02-16 10:47:13.594] [renderer1] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/tsubase/docker-examples/multi-01-starting-setup/.vscode'
