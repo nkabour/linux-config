@@ -3,49 +3,30 @@
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/pack/plugins/start')
-
- " " Make sure you use single quotes
  
- " " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
- Plug 'junegunn/vim-easy-align'
- " 
- " " Any valid git URL is allowed
- " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
- " 
- " " Multiple Plug commands can be written in a single line using | separators
- " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
- " 
- " " On-demand loading
- " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
- " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
- " 
- " " Using a non-default branch
- " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
- " 
- " " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
- " Plug 'fatih/vim-go', { 'tag': '*' }
- " 
- " " Plugin options
- " Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
- " 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/vim-easy-align'
+Plug 'SirVer/ultisnips' 
+Plug 'honza/vim-snippets'
+  
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"fzf version not compatible with fzf-vim ;(
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 
-"https://github.com/itchyny/lightline.vim
+
+Plug 'itchyny/lightline.vim'
 
 " Color Scheme 
 Plug 'ghifarit53/tokyonight-vim'
 
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
 
 " Initialize plugin system
 call plug#end()
 
 
-
 " editor configrations
 
+let mapleader=";"
 set number
 set autoindent
 set tabstop=4
@@ -61,4 +42,34 @@ colorscheme tokyonight
 
 let g:lightline={'colorscheme': 'tokyonight'}
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+set ttymouse=sgr
+
+" Ez Align Config
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+"fzf configs
+"let g:fzf_preview_window = ['right:30%', 'ctrl-/']
+
+
+"Mapping nerdtree keys
+nnoremap <A-f> :NERDTreeFind<CR>
+nnoremap <C-t> :NERDTreeToggle <CR>
+
+
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+
+
+"Remaping weird default navigation 
+map <C-h> <c-w>h
+map <C-l> <c-w>l
+map <C-j> <c-w>j
+map <C-k> <c-w>k
