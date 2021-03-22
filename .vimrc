@@ -2,20 +2,19 @@
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
+set nocompatible
 call plug#begin('~/.vim/pack/plugins/start')
  
-Plug 'junegunn/vim-easy-align'
-Plug 'SirVer/ultisnips' 
-Plug 'honza/vim-snippets'
-  
+Plug 'SirVer/ultisnips' "sinppet engine 
+Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
+Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
+Plug 'dense-analysis/ale' "async lint engine    
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "fzf version not compatible with fzf-vim ;(
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
 
-
 Plug 'itchyny/lightline.vim'
-
 " Color Scheme 
 Plug 'ghifarit53/tokyonight-vim'
 
@@ -50,13 +49,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 set ttymouse=sgr
 
-" Ez Align Config
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
 "fzf configs
 "let g:fzf_preview_window = ['right:30%', 'ctrl-/']
 
+"config ale to fix everything on autosave
+let g:ale_fixers['javascript'] = ['eslint']
+let g:ale_fix_on_save=1
 
 "Mapping nerdtree keys
 nnoremap <A-f> :NERDTreeFind<CR>
