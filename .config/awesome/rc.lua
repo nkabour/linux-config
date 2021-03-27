@@ -58,17 +58,6 @@ end
 
 run_once({ "urxvtd", "unclutter -root" }) -- entries must be separated by commas
 
--- This function implements the XDG autostart specification
---[[
-awful.spawn.with_shell(
-    'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
-    'xrdb -merge <<< "awesome.started:true";' ..
-    -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
-    'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
-)
---]]
-
--- }}}
 
 -- {{{ Variable definitions
 
@@ -108,21 +97,6 @@ awful.layout.layouts = {
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.floating,
     
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
-    --awful.layout.suit.corner.nw,
-    --awful.layout.suit.corner.ne,
-    --awful.layout.suit.corner.sw,
-    --awful.layout.suit.corner.se,
-    --lain.layout.cascade,
-    --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
-    --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -140,42 +114,6 @@ awful.util.taglist_buttons = my_table.join(
     end),
     awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
-)
-
-awful.util.tasklist_buttons = my_table.join(
-    awful.button({ }, 1, function (c)
-        if c == client.focus then
-            c.minimized = true
-        else
-            --c:emit_signal("request::activate", "tasklist", {raise = true})<Paste>
-
-            -- Without this, the following
-            -- :isvisible() makes no sense
-            c.minimized = false
-            if not c:isvisible() and c.first_tag then
-                c.first_tag:view_only()
-            end
-            -- This will also un-minimize
-            -- the client, if needed
-            client.focus = c
-            c:raise()
-        end
-    end),
-    awful.button({ }, 2, function (c) c:kill() end),
-    awful.button({ }, 3, function ()
-        local instance = nil
-
-        return function ()
-            if instance and instance.wibox.visible then
-                instance:hide()
-                instance = nil
-            else
-                instance = awful.menu.clients({theme = {width = dpi(250)}})
-            end
-        end
-    end),
-    awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
-    awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
 )
 
 lain.layout.termfair.nmaster           = 3
@@ -232,10 +170,6 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
-    -- Take a screenshot
-    -- https://github.com/lcpz/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end,
-              {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
     awful.key({ altkey, "Control" }, "l", function () os.execute(scrlocker) end,
@@ -437,54 +371,6 @@ globalkeys = my_table.join(
         end,
         {description = "volume 0%", group = "hotkeys"}),
 
-    -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            os.execute("mpc toggle")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc toggle", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            os.execute("mpc stop")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc stop", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            os.execute("mpc prev")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc prev", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            os.execute("mpc next")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc next", group = "widgets"}),
-    awful.key({ altkey }, "0",
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
-        end,
-        {description = "mpc on/off", group = "widgets"}),
-
-    -- Copy primary to clipboard (terminals to gtk)
-    awful.key({ modkey }, "c", function () awful.spawn.with_shell("xsel | xsel -i -b") end,
-              {description = "copy terminal to gtk", group = "hotkeys"}),
-    -- Copy clipboard to primary (gtk to terminals)
-    awful.key({ modkey }, "v", function () awful.spawn.with_shell("xsel -b | xsel") end,
-              {description = "copy gtk to terminal", group = "hotkeys"}),
-
-
-
    -- Run Dmenu
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
               {description = "run dmenu", group = "launcher"}),
@@ -495,18 +381,19 @@ globalkeys = my_table.join(
               {description = "run browser", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(gui_editor) end,
               {description = "run gui editor", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "d", function () awful.spawn("discord") end, 
+        {description = "discord launcher" , group = "launcher"}), 
 
-              
+    awful.key({modekey, "Control" }, "s", function () awful.spawn("slack") end, 
+        {descripiton = "slack lancher" , group = " launcehr"}), 
+    awful.key({modkey, "Control"}, "n", function () awful.spawn("nautilus") end, 
+                {description = "launches file manager", group="launcher"}),          
     -- PrintScreen hotkeys
     awful.key({ },            "Print",     function () awful.util.spawn("gnome-screenshot") end,              
               {description = "screenshot the whole window", group = "PrintScreen"}),
               
     awful.key({altkey},            "Print",     function () awful.util.spawn("gnome-screenshot -a") end,              
-              {description = "screenshot selected area", group = "PrintScreen"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
-
+              {description = "screenshot selected area", group = "PrintScreen"})
     --]]
 )
 
@@ -665,69 +552,13 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-    -- Custom
-    if beautiful.titlebar_fun then
-        beautiful.titlebar_fun(c)
-        return
-    end
-
-    -- Default
-    -- buttons for the titlebar
-    local buttons = my_table.join(
-        awful.button({ }, 1, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.move(c)
-        end),
-        awful.button({ }, 2, function() c:kill() end),
-        awful.button({ }, 3, function()
-            c:emit_signal("request::activate", "titlebar", {raise = true})
-            awful.mouse.client.resize(c)
-        end)
-    )
-
-    awful.titlebar(c, {size = dpi(16)}) : setup {
-        { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { -- Title
-                align  = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
-        },
-        { -- Right
-            awful.titlebar.widget.floatingbutton (c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton   (c),
-            awful.titlebar.widget.ontopbutton    (c),
-            awful.titlebar.widget.closebutton    (c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
-    }
-end)
-
--- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal("mouse::enter", function(c)
---     c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
--- end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- possible workaround for tag preservation when switching back to default screen:
--- https://github.com/lcpz/awesome-copycats/issues/251
--- }}}
 
 
 -- Autostart stuff here
 awful.spawn.with_shell("compton")
-awful.spawn.easy_async_with_shell("sh ~/.config/awesome/screen_layout.sh",function() awful.spawn.easy_async_with_shell("nitrogen --restore") end)
-awful.spawn.easy_async_with_shell("discord")
--- awful.spawn.easy_async_with_shell("chromium")
+awful.spawn.with_shell("nitrogen --restore")
+--awful.spawn.easy_async_with_shell("sh ~/.config/awesome/screen_layout.sh",function() awful.spawn.easy_async_with_shell("nitrogen --restore") end)

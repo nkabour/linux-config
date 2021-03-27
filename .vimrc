@@ -53,7 +53,18 @@ set ttymouse=sgr
 "let g:fzf_preview_window = ['right:30%', 'ctrl-/']
 
 "config ale to fix everything on autosave
-let g:ale_fixers['javascript'] = ['eslint']
+let g:ale_fixers = { 
+      \ 'javascript': ['prettier'] ,
+      \ 'html': ['prettier'] ,
+      \ 'css': ['prettier'] ,
+      \ 'json': ['prettier'] 
+      \ } 
+let g:ale_linters = {
+      \ 'javascript': ['eslint'] ,
+      \ 'html': ['eslint'] ,
+      \ 'css': ['eslint'] ,
+      \ 'json': ['eslint'] 
+      \ } 
 let g:ale_fix_on_save=1
 
 "Mapping nerdtree keys
