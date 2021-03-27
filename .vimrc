@@ -17,7 +17,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'itchyny/lightline.vim'
 " Color Scheme 
 Plug 'ghifarit53/tokyonight-vim'
-
+Plug 'ap/vim-css-color'
 
 " Initialize plugin system
 call plug#end()
