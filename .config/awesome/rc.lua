@@ -1,8 +1,6 @@
 --[[
-
      Awesome WM configuration template
      github.com/lcpz
-
 --]]
 
 -- {{{ Required libraries
@@ -268,7 +266,7 @@ globalkeys = my_table.join(
 
 
     -- On the fly useless gaps change
-    awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end,
+    awful.key({ altkey, "Control" }, "=", function () lain.util.useless_gaps_resize(1) end,
               {description = "increment useless gaps", group = "tag"}),
     awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end,
               {description = "decrement useless gaps", group = "tag"}),
@@ -384,9 +382,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Control" }, "d", function () awful.spawn("discord") end, 
         {description = "discord launcher" , group = "launcher"}), 
 
-    awful.key({modekey, "Control" }, "s", function () awful.spawn("slack") end, 
-        {descripiton = "slack lancher" , group = " launcehr"}), 
-    awful.key({modkey, "Control"}, "n", function () awful.spawn("nautilus") end, 
+    awful.key({modkey, "Control"}, "f", function () awful.spawn("nautilus") end, 
                 {description = "launches file manager", group="launcher"}),          
     -- PrintScreen hotkeys
     awful.key({ },            "Print",     function () awful.util.spawn("gnome-screenshot") end,              
@@ -562,3 +558,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("compton")
 awful.spawn.with_shell("nitrogen --restore")
 --awful.spawn.easy_async_with_shell("sh ~/.config/awesome/screen_layout.sh",function() awful.spawn.easy_async_with_shell("nitrogen --restore") end)
+
