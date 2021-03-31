@@ -4,15 +4,25 @@
 " - Avoid using standard Vim directory names like 'plugin'
 set nocompatible
 call plug#begin('~/.vim/pack/plugins/start')
- 
+
+
+"snippets & auto completion 
 Plug 'SirVer/ultisnips' "sinppet engine 
 Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
 Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
-Plug 'dense-analysis/ale' "async lint engine    
+
+"async lint enigine
+Plug 'dense-analysis/ale' 
+
+"file tree window
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-"fzf version not compatible with fzf-vim ;(
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
+
+"fuzzy finder 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+"NERD commenter
+Plug 'preservim/nerdcommenter'
 
 Plug 'itchyny/lightline.vim'
 " Color Scheme 
@@ -50,7 +60,7 @@ let g:UltiSnipsEditSplit="vertical"
 set ttymouse=sgr
 
 "fzf configs
-"let g:fzf_preview_window = ['right:30%', 'ctrl-/']
+let g:fzf_preview_window = ['right:30%', 'ctrl-/']
 
 "config ale to fix everything on autosave
 let g:ale_fixers = { 

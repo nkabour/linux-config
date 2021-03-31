@@ -89,6 +89,9 @@ export EDITOR='vim'
 
 #aliases here...
 alias pdfr=evince 
+alias pbcopy='xclip -sel c'
+alias pbpaste='xclip -sel c -o'
+
 
 
 #functions here...
