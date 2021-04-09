@@ -331,45 +331,33 @@ globalkeys = my_table.join(
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
               {description = "show weather", group = "widgets"}),
 
-    -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 10") end,
-              {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
-              {description = "-10%", group = "hotkeys"}),
-
-    -- ALSA volume control
+    -- PULSE volume control
     awful.key({ altkey }, "Up",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume up", group = "hotkeys"}),
-    awful.key({ altkey }, "Down",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume down", group = "hotkeys"}),
-    awful.key({ altkey }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "toggle mute", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 100%", group = "hotkeys"}),
-    awful.key({ altkey, "Control" }, "0",
-        function ()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "volume 0%", group = "hotkeys"}),
-
-   -- Run Dmenu
+    function ()
+        os.execute(string.format("pactl set-sink-volume %s +1%%", beautiful.volume.device))
+        beautiful.volume.update()
+    end),
+awful.key({ altkey }, "Down",
+    function ()
+        os.execute(string.format("pactl set-sink-volume %s -1%%", beautiful.volume.device))
+        beautiful.volume.update()
+    end),
+awful.key({ altkey }, "m",
+    function ()
+        os.execute(string.format("pactl set-sink-mute %s toggle", beautiful.volume.device))
+        beautiful.volume.update()
+    end),
+awful.key({ altkey, "Control" }, "m",
+    function ()
+        os.execute(string.format("pactl set-sink-volume %s 100%%", beautiful.volume.device))
+        beautiful.volume.update()
+    end),
+awful.key({ altkey, "Control" }, "0",
+    function ()
+        os.execute(string.format("pactl set-sink-volume %s 0%%", beautiful.volume.device))
+        beautiful.volume.update()
+    end),
+    -- Run Dmenu
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
               {description = "run dmenu", group = "launcher"}),
               
@@ -382,7 +370,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Control" }, "d", function () awful.spawn("discord") end, 
         {description = "discord launcher" , group = "launcher"}), 
 
-    awful.key({modkey, "Control"}, "f", function () awful.spawn("nautilus") end, 
+    awful.key({modkey, "Control"}, "f", function () awful.spawn("pcmanfm") end, 
                 {description = "launches file manager", group="launcher"}),          
     -- PrintScreen hotkeys
     awful.key({ },            "Print",     function () awful.util.spawn("gnome-screenshot") end,              

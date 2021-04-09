@@ -182,7 +182,6 @@ local net = lain.widget.net({
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.pulse({
     settings = function()
-    vlevel = volume_now.left .. "% | " .. volume_now.device 
     if volume_now.muted == "yes" then
         volicon:set_image(theme.widget_vol_mute)
     elseif tonumber(volume_now.left) == 0 then
@@ -193,7 +192,7 @@ theme.volume = lain.widget.pulse({
         volicon:set_image(theme.widget_vol)
     end
 
-    widget:set_markup(markup.font(theme.font, " " .. vlevel))
+    widget:set_markup(markup.font(theme.font, " " .. volume_now.left .. "%"))
     end
 })
 theme.volume.widget:buttons(awful.util.table.join(
