@@ -10,7 +10,9 @@ call plug#begin('~/.vim/pack/plugins/start')
 Plug 'SirVer/ultisnips' "sinppet engine 
 Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
 Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
-
+Plug 'rhysd/vim-clang-format' "autoformat for c++ & other langs
+"editor hacks
+Plug 'terryma/vim-multiple-cursors'
 "async lint enigine
 Plug 'dense-analysis/ale' 
 
@@ -67,7 +69,7 @@ let g:ale_fixers = {
       \ 'javascript': ['prettier'] ,
       \ 'html': ['prettier'] ,
       \ 'css': ['prettier'] ,
-      \ 'json': ['prettier'] 
+      \ 'json': ['prettier'] ,
       \ } 
 let g:ale_linters = {
       \ 'javascript': ['eslint'] ,
@@ -77,10 +79,28 @@ let g:ale_linters = {
       \ } 
 let g:ale_fix_on_save=1
 
+"Clang fromatter configs
+"let g:clang_format#style_options = {
+            "\ "AccessModifierOffset" : -4,
+            "\ "AllowShortIfStatementsOnASingleLine" : "true",
+            "\ "AlwaysBreakTemplateDeclarations" : "true",
+            "\ "Standard" : "C++11",
+            "\ "BreakBeforeBraces" : "Stroustrup"}
+
+"let g:clang_format#auto_format=1
+
+" map to <leader>cf in c++ code
+"autocmd filetype c,cc,cpp,objc nnoremap <buffer><leader>cf :<c-u>clangformat<cr>
+"autocmd filetype c,cc,cpp,objc vnoremap <buffer><leader>cf :clangformat<cr>
+"map <leader>c :clangformatautotoggle<cr>
+
+
 "Mapping nerdtree keys
 nnoremap <A-f> :NERDTreeFind<CR>
 nnoremap <C-t> :NERDTreeToggle <CR>
 
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Open the existing NERDTree on each new tab.
