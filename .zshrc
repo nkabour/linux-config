@@ -36,33 +36,42 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 #vi mode bindings
-bindkey -v
-export KEYTIMEOUT=1
+#bindkey -v
+#export KEYTIMEOUT=1
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+### Change cursor shape for different vi modes.
+#function zle-keymap-select () {
+    #case $KEYMAP in
+        #vicmd) echo -ne '\e[1 q';;      # block
+        #viins|main) echo -ne '\e[5 q';; # beam
+    #esac
+#}
+#zle -N zle-keymap-select
+#zle-line-init() {
+    #zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    #echo -ne "\e[5 q"
+#}
+#zle -N zle-line-init
+#echo -ne '\e[5 q' # Use beam shape cursor on startup.
+#preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #aliases here...
 alias pdfr=evince 
 alias pbcopy='xclip -sel c'
 alias pbpaste='xclip -sel c -o'
+alias gipl='git pull origin'
+alias gips='git push origin'
+alias gic='git commit -m'
+alias gia='git add .'
+alias dcu="docker-compose up"
+alias dcbu="docker-compose build && docker-compose up"
+alias dcrv="docker-compose down -v"
+alias dcrma="docker-compose down --rmi all"
 
 
 
