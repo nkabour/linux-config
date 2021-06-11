@@ -74,10 +74,9 @@ alias dcrv="docker-compose down -v"
 alias dcrma="docker-compose down --rmi all"
 
 
-
 #functions here...
 op() { fzf | xargs -or $EDITOR; }
-
+wic() { sudo nmcli dev wifi connect $1 password $2; } 
 
 ### Random color script for fun XD ###
 colorscript random
