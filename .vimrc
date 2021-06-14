@@ -4,26 +4,18 @@
 " - Avoid using standard Vim directory names like 'plugin'
 set nocompatible
 call plug#begin('~/.vim/pack/plugins/start')
-
-
-"snippets & auto completion 
-Plug 'SirVer/ultisnips' "sinppet engine 
+ 
 Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
 Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
-
-"async lint enigine
-Plug 'dense-analysis/ale' 
-
-"file tree window
+Plug 'dense-analysis/ale' "async lint engine    
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-"fuzzy finder 
+"fzf version not compatible with fzf-vim ;(
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-"NERD commenter
-Plug 'preservim/nerdcommenter'
 
+
+Plug 'preservim/nerdcommenter' 
 Plug 'itchyny/lightline.vim'
 " Color Scheme 
 Plug 'ghifarit53/tokyonight-vim'
@@ -81,6 +73,11 @@ let g:ale_fix_on_save=1
 nnoremap <A-f> :NERDTreeFind<CR>
 nnoremap <C-t> :NERDTreeToggle <CR>
 
+"Mapping FZF keys 
+
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " Open the existing NERDTree on each new tab.
@@ -92,3 +89,15 @@ map <C-h> <c-w>h
 map <C-l> <c-w>l
 map <C-j> <c-w>j
 map <C-k> <c-w>k
+
+"Mapping for arabic/english switchers 
+nnoremap <leader>a :set rl <CR>
+nnoremap <leader>e :set norl <CR>
+
+"Mapping for auto closing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<left>
