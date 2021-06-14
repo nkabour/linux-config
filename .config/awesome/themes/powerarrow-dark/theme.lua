@@ -159,14 +159,13 @@ local temp = lain.widget.temp({
 
 -- / fs
 local fsicon = wibox.widget.imagebox(theme.widget_hdd)
---[[ commented because it needs Gio/Glib >= 2.54
+-- commented because it needs Gio/Glib >= 2.54
 theme.fs = lain.widget.fs({
     notification_preset = { fg = theme.fg_normal, bg = theme.bg_normal, font = "Terminus 10" },
     settings = function()
         widget:set_markup(markup.font(theme.font, " " .. fs_now["/"].percentage .. "% "))
     end
 })
---]]
 
 -- Net
 local neticon = wibox.widget.imagebox(theme.widget_net)
@@ -178,6 +177,45 @@ local net = lain.widget.net({
                           markup("#46A8C3", " " .. string.format("%06.1f", net_now.sent) .. " ")))
     end
 })
+ 
+-- Pulse volume
+local volicon = wibox.widget.imagebox(theme.widget_vol)
+theme.volume = lain.widget.pulse({
+    settings = function()
+    if volume_now.muted == "yes" then
+        volicon:set_image(theme.widget_vol_mute)
+    elseif tonumber(volume_now.left) == 0 then
+        volicon:set_image(theme.widget_vol_no)
+    elseif tonumber(volume_now.left) <= 50 then
+        volicon:set_image(theme.widget_vol_low)
+    else
+        volicon:set_image(theme.widget_vol)
+    end
+
+    widget:set_markup(markup.font(theme.font, " " .. volume_now.left .. "%"))
+    end
+})
+theme.volume.widget:buttons(awful.util.table.join(
+    awful.button({}, 1, function() -- left click
+        awful.spawn("pavucontrol")
+    end),
+    awful.button({}, 2, function() -- middle click
+        os.execute(string.format("pactl set-sink-volume %s 100%%", theme.volume.device))
+        theme.volume.update()
+    end),
+    awful.button({}, 3, function() -- right click
+        os.execute(string.format("pactl set-sink-mute %s toggle", theme.volume.device))
+        theme.volume.update()
+    end),
+    awful.button({}, 4, function() -- scroll up
+        os.execute(string.format("pactl set-sink-volume %s +1%%", theme.volume.device))
+        theme.volume.update()
+    end),
+    awful.button({}, 5, function() -- scroll down
+        os.execute(string.format("pactl set-sink-volume %s -1%%", theme.volume.device))
+        theme.volume.update()
+    end)
+))
 
 -- Separators
 local spr     = wibox.widget.textbox(' ')
@@ -208,7 +246,7 @@ function theme.at_screen_connect(s)
                            awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
                            awful.button({}, 3, function () awful.layout.inc(-1) end),
                            awful.button({}, 4, function () awful.layout.inc( 1) end),
-                           awful.button({}, 5, function () awful.layout.inc(-1) end)))
+                          awful.button({}, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
@@ -242,11 +280,15 @@ function theme.at_screen_connect(s)
             --tempicon,
             --temp.widget,
             memicon,
-            mem.widget,
+            mem.widget,       
             arrl_ld,
-            --wibox.container.background(fsicon, theme.bg_focus),
-            --wibox.container.background(theme.fs.widget, theme.bg_focus),
-            -- arrl_ld,
+            wibox.container.background(fsicon, theme.bg_focus),
+            wibox.container.background(theme.fs.widget, theme.bg_focus),
+  
+            arrl_dl,
+            volicon,
+            theme.volume.widget,
+           arrl_ld,
             wibox.container.background(neticon, theme.bg_focus),
             wibox.container.background(net.widget, theme.bg_focus),
             arrl_dl,

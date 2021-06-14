@@ -8,6 +8,12 @@ call plug#begin('~/.vim/pack/plugins/start')
 Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
 Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
 Plug 'dense-analysis/ale' "async lint engine    
+Plug 'rhysd/vim-clang-format' "autoformat for c++ & other langs
+"editor hacks
+Plug 'terryma/vim-multiple-cursors'
+"async lint enigine
+
+"file tree window
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "fzf version not compatible with fzf-vim ;(
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -59,7 +65,7 @@ let g:ale_fixers = {
       \ 'javascript': ['prettier'] ,
       \ 'html': ['prettier'] ,
       \ 'css': ['prettier'] ,
-      \ 'json': ['prettier'] 
+      \ 'json': ['prettier'] ,
       \ } 
 let g:ale_linters = {
       \ 'javascript': ['eslint'] ,
@@ -68,6 +74,22 @@ let g:ale_linters = {
       \ 'json': ['eslint'] 
       \ } 
 let g:ale_fix_on_save=1
+
+"Clang fromatter configs
+"let g:clang_format#style_options = {
+            "\ "AccessModifierOffset" : -4,
+            "\ "AllowShortIfStatementsOnASingleLine" : "true",
+            "\ "AlwaysBreakTemplateDeclarations" : "true",
+            "\ "Standard" : "C++11",
+            "\ "BreakBeforeBraces" : "Stroustrup"}
+
+"let g:clang_format#auto_format=1
+
+" map to <leader>cf in c++ code
+"autocmd filetype c,cc,cpp,objc nnoremap <buffer><leader>cf :<c-u>clangformat<cr>
+"autocmd filetype c,cc,cpp,objc vnoremap <buffer><leader>cf :clangformat<cr>
+"map <leader>c :clangformatautotoggle<cr>
+
 
 "Mapping nerdtree keys
 nnoremap <A-f> :NERDTreeFind<CR>
