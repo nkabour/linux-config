@@ -7,10 +7,8 @@ call plug#begin('~/.vim/pack/plugins/start')
  
 Plug 'honza/vim-snippets' "another sinppet engine might remove eventually
 Plug 'sheerun/vim-polyglot' "helps in autocompeletion for multiple languages
-Plug 'dense-analysis/ale' "async lint engine    
-Plug 'rhysd/vim-clang-format' "autoformat for c++ & other langs
 "editor hacks
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 "async lint enigine
 
 "file tree window
@@ -18,8 +16,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "fzf version not compatible with fzf-vim ;(
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-
 
 Plug 'preservim/nerdcommenter' 
 Plug 'itchyny/lightline.vim'
@@ -40,7 +36,6 @@ set tabstop=4
 set expandtab 
 set softtabstop=4
 set laststatus=2
-set termguicolors
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:tokyonight_transparent_background=1
@@ -59,37 +54,6 @@ set ttymouse=sgr
 
 "fzf configs
 let g:fzf_preview_window = ['right:30%', 'ctrl-/']
-
-"config ale to fix everything on autosave
-let g:ale_fixers = { 
-      \ 'javascript': ['prettier'] ,
-      \ 'html': ['prettier'] ,
-      \ 'css': ['prettier'] ,
-      \ 'json': ['prettier'] ,
-      \ } 
-let g:ale_linters = {
-      \ 'javascript': ['eslint'] ,
-      \ 'html': ['eslint'] ,
-      \ 'css': ['eslint'] ,
-      \ 'json': ['eslint'] 
-      \ } 
-let g:ale_fix_on_save=1
-
-"Clang fromatter configs
-"let g:clang_format#style_options = {
-            "\ "AccessModifierOffset" : -4,
-            "\ "AllowShortIfStatementsOnASingleLine" : "true",
-            "\ "AlwaysBreakTemplateDeclarations" : "true",
-            "\ "Standard" : "C++11",
-            "\ "BreakBeforeBraces" : "Stroustrup"}
-
-"let g:clang_format#auto_format=1
-
-" map to <leader>cf in c++ code
-"autocmd filetype c,cc,cpp,objc nnoremap <buffer><leader>cf :<c-u>clangformat<cr>
-"autocmd filetype c,cc,cpp,objc vnoremap <buffer><leader>cf :clangformat<cr>
-"map <leader>c :clangformatautotoggle<cr>
-
 
 "Mapping nerdtree keys
 nnoremap <A-f> :NERDTreeFind<CR>
@@ -111,6 +75,10 @@ map <C-h> <c-w>h
 map <C-l> <c-w>l
 map <C-j> <c-w>j
 map <C-k> <c-w>k
+
+"vsplit/split hotkey maps
+nnoremap <leader>vs :vsplit <CR>
+nnoremap <leader>hs :split <CR>
 
 "Mapping for arabic/english switchers 
 nnoremap <leader>a :set rl <CR>

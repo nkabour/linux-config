@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Statusbar loop
+while true; do
+     xsetroot -name "$( date +"%F %R" )"
+     sleep 1m    # Update time every minute
+done &
+
+setxkbmap -option caps:swapescape &
+nitrogen --restore & picom &
+xidlehook --not-when-audio --not-when-fullscreen --timer 1800 'systemctl suspend' '' &
+exec /usr/local/bin/dwm 

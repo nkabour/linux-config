@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=DWM
+Comment=dwm window manager
+Exec=/home/tsubasa/.config/dwm/start.sh
+Type=Application
+
