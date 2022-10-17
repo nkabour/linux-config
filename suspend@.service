@@ -7,8 +7,7 @@ Before=suspend.target
 User=%i
 Type=simple
 Environment=DISPLAY=:0
-ExecStartPre=/usr/bin/xset dpms force suspend
-ExecStart=/usr/local/bin/slock
+ExecStart=/bin/dm-tool lock
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]

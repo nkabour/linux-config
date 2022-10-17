@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=DWM
 Comment=dwm window manager
-Exec=/home/tsubasa/.config/dwm/start.sh
+Exec=/home/tsuki/.config/dwm/dwmrc
 Type=Application
 
