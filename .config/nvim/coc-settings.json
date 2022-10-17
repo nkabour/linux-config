@@ -1,0 +1,46 @@
+{
+  "eslint.autoFixOnSave": true,
+  "prettier.semi": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "json",
+    "markdown",
+    "xml",
+    "prisma",
+    "javascriptreact",
+    "typescriptreact",
+    "html",
+    "cpp",
+    "c",
+    "java"
+  ],
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "cc",
+        "cpp",
+        "c++",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  },
+  "java.format.settings.url": "/home/tsuki/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+}

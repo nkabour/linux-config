@@ -21,8 +21,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 
 "Color Scheme 
-Plug 'ghifarit53/tokyonight-vim'
 Plug 'lilydjwg/colorizer'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'bluz71/vim-nightfly-guicolors'
+
+"cmake plugin
+Plug 'cdelledonne/vim-cmake'
 
 " Initialize plugin system
 call plug#end()
@@ -30,20 +34,23 @@ call plug#end()
 
 " editor configrations
 
+
 let mapleader=";"
 set number
 set autoindent
 set tabstop=4
 set expandtab 
 set softtabstop=4
+set termguicolors
 set laststatus=2
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:tokyonight_transparent_background=1
 
-colorscheme tokyonight
-
 let g:lightline={'colorscheme': 'tokyonight'}
+
+colorscheme tokyonight
+"colorscheme nightfly
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -58,6 +65,8 @@ let g:fzf_preview_window = ['right:30%', 'ctrl-/']
 "Mapping nerdtree keys
 nnoremap <A-f> :NERDTreeFind<CR>
 nnoremap <C-t> :NERDTreeToggle <CR>
+
+let NERDTreeShowHidden=1
 
 "Mapping FZF keys 
 
@@ -90,6 +99,12 @@ inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<left>
+
+
+"Cmake mappinga
+
+nmap <leader>cg :CMakeGenerate<cr>
+nmap <leader>cd :CMakeBuild<cr>
 
 
 "Mappings for cocneovim
@@ -180,8 +195,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
